@@ -17,8 +17,7 @@ class Scraper:
         print('(P)esquisar;')
         print('(T)todos os titulos;')
         print('(U)ltimos posts.')
-        self.option = input('')
-        self.option = self.option.lower()
+        self.option = str.lower(input(''))
 
         if self.option == 'p':
             self.pesquisar()
@@ -40,7 +39,7 @@ class Scraper:
         for hq in self.phq:
             self.hqText = hq.get_text().replace('\n', '')
             self.hqLink = hq.a['href']
-            print('%s' % (self.hqText))
+            print('{}'.format(self.hqText))
 
     def titulos(self):
         self.tURL = 'http://renegadoscomics.blogspot.com.br/'
